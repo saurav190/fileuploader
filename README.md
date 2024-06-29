@@ -1,9 +1,9 @@
 # fileuploader
 file uploader MERN App
 
-to run the application 
+to run the application run the following commands 
 server -->
-npm i 
+npm install
 npm run start
 
 client -->
