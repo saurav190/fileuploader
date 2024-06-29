@@ -1,0 +1,35 @@
+# Configs
+.eslintrc.js
+babel.config.js
+prettier.config.js
+tsconfig.js
+webpack.config.js
+
+# Distributable
+/node_modules/
+dist
+build
+*.bundle.js
+*.js.map
+.prettierrc
+.eslintrc.js
+node_modules/
+dist/
+env.d.ts
+
+# Version control
+.git
+.history
+
+# Storybook
+storybook-static
+**/*.story.js
+*.story.js
+.storybook
+
+# Tests
+config
+jest.config.js
+
+# Webpack
+webpack
