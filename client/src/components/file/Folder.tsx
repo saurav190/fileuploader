@@ -16,7 +16,7 @@ const Folder = () => {
   const handleFolderCreate = async () => {
     if (newFolderName.trim() !== '') {
       try {
-        await createFolderMutation(JSON.stringify({ folder_name: newFolderName }));
+        await createFolderMutation({ folder_name: newFolderName });
         setNewFolderName(''); // Clear the input after successful creation
       } catch (error) {
         console.error('Error creating folder:', error);
@@ -24,9 +24,8 @@ const Folder = () => {
       }
     }
   };
-  
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     setNewFolderName(event.target.value);
   };
 
@@ -36,16 +35,12 @@ const Folder = () => {
       <Flex justify={'space-between'} px={'xl'} py={'xs'} align={'center'} gap={'md'} mb="lg">
         <Title order={2}>Folders</Title>
         <Flex gap={'md'} align={'center'}>
-          <TextInput
-            placeholder="Create Folder"
-            value={newFolderName}
-            onChange={handleInputChange}
-          />
+          <TextInput placeholder="Create Folder" value={newFolderName} onChange={handleInputChange} />
           <Button onClick={handleFolderCreate}>Create</Button>
         </Flex>
       </Flex>
       <Grid p={'lg'}>
-        {data?.map((product) => (
+        {data?.map(product => (
           <Grid.Col span={12 / 8} key={product._id}>
             <Card shadow="sm" padding="lg" radius="md" withBorder>
               <NavLink to={`/folder/${product._id}`}>
